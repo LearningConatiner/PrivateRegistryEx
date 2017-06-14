@@ -51,6 +51,17 @@ metadata:
   uid: 027cacdc-5116-11e7-ba09-42010a8000a1
 type: kubernetes.io/dockercfg
 
+srilakshmi_krishnamoorthy@x-jigsaw-168411:~/Step1$ vi secret64
+The value of the .dockercfg field is a base64 representation of your secret data.
+Copy the base64 representation of the secret data into a file named secret64.
+Important: Make sure there are no line breaks in your secret64 file.
+To understand what is in the .dockercfg field, convert the secret data to a readable format:
+
+srilakshmi_krishnamoorthy@x-jigsaw-168411:~/Step1$ base64 -d secret64
+
+The output is similar to this:
+{"yourprivateregistry.com":{"username":"janedoe","password":"xxxxxxxxxxx","email":"jdoe@example.com","auth":"c3R...zE2"}}
+
 5.Create a docker image and push to private registry
 docker build -t privatehelloworld .
 Sending build context to Docker daemon 69.63 kB
@@ -168,5 +179,7 @@ python                        3.5-alpine          401ea9b24eeb        5 days ago
 
 
 Create a pod with the yaml file 
-kubectl create -f my-private-reg-pod.yaml
+srilakshmi_krishnamoorthy@x-jigsaw-168411:~/Step1$ kubectl create -f private-reg-pod.yaml 
+pod "private-reg" created
+
 kubectl get pod private-reg
