@@ -166,3 +166,7 @@ REPOSITORY                    TAG                 IMAGE ID            CREATED   
 srilakh/privateregistrydemo   privatehello        cfe6742a4988        3 minutes ago       99.59 MB
 python                        3.5-alpine          401ea9b24eeb        5 days ago          89.32 MB
 
+
+Create a pod with the yaml file 
+kubectl create -f my-private-reg-pod.yaml
+kubectl get pod private-reg
