@@ -29,9 +29,6 @@ Create a Secret that holds your authorization token
 Create a Secret named regsecret:
 kubectl create secret docker-registry regsecret --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
 
-srilakshmi_krishnamoorthy@x-jigsaw-168411:~$ kubectl create secret docker-registry regsecret --docker-server=srilakh/privatere
-istryDemo --docker-username=srilakh --docker-password=google@123 --docker-email=srilakshmi.krishnamoorthy@gmail.com
-secret "regsecret" created
 
 4.To understand what’s in the Secret you just created, start by viewing the Secret in YAML format:
 kubectl get secret regsecret --output=yaml
